@@ -1305,7 +1305,12 @@ export default function EditPage() {
     size: number
   ) => {
     try {
-      const qrDataUrl = await QRCode.toDataURL(url, { margin: 0 });
+      const qrDataUrl = await QRCode.toDataURL(
+        "https://dl-gamma-six.vercel.app/download?" + url,
+        {
+          margin: 0,
+        }
+      );
       const qrImg = new window.Image();
       qrImg.crossOrigin = "anonymous";
       qrImg.src = qrDataUrl;
